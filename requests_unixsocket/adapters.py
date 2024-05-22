@@ -25,7 +25,7 @@ class UnixHTTPConnection(httplib.HTTPConnection, object):
         netloc is a percent-encoded path to a unix domain socket. E.g.:
         'http+unix://%2Ftmp%2Fprofilesvc.sock/status/pid'
         """
-        super(UnixHTTPConnection, self).__init__('localhost', timeout=timeout)
+        super(UnixHTTPConnection, self).__init__("localhost", timeout=timeout)
         self.unix_socket_url = unix_socket_url
         self.timeout = timeout
         self.sock = None
@@ -45,8 +45,7 @@ class UnixHTTPConnection(httplib.HTTPConnection, object):
 class UnixHTTPConnectionPool(urllib3.connectionpool.HTTPConnectionPool):
 
     def __init__(self, socket_path, timeout=60):
-        super(UnixHTTPConnectionPool, self).__init__(
-            'localhost', timeout=timeout)
+        super(UnixHTTPConnectionPool, self).__init__("localhost", timeout=timeout)
         self.socket_path = socket_path
         self.timeout = timeout
 
@@ -68,8 +67,9 @@ class UnixAdapter(HTTPAdapter):
         proxy = proxies.get(urlparse(url.lower()).scheme)
 
         if proxy:
-            raise ValueError('%s does not support specifying proxies'
-                             % self.__class__.__name__)
+            raise ValueError(
+                "%s does not support specifying proxies" % self.__class__.__name__
+            )
 
         with self.pools.lock:
             pool = self.pools.get(url)
