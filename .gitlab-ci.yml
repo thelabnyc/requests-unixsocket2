@@ -1,0 +1,22 @@
+stages:
+  - test
+
+cache:
+  key: "$CI_PROJECT_NAME"
+  paths:
+    - $HOME/.cache/pip
+
+test:
+  stage: test
+  image: "registry.gitlab.com/thelabnyc/python:${IMAGE}"
+  script:
+    - pip install tox
+    - tox
+  parallel:
+    matrix:
+      - IMAGE: py310
+        TOX_SKIP_ENV: "^(?!py310-)"
+      - IMAGE: py311
+        TOX_SKIP_ENV: "^(?!py311-)"
+      - IMAGE: py312
+        TOX_SKIP_ENV: "^(?!py312-)"
