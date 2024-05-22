@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "requests-unixsocket2"
-version = "0.3.0"
+version = "0.4.0-b1"
 description = "Use requests to talk HTTP via a UNIX domain socket"
 authors = ["thelab <thelabdev@thelab.co>"]
 readme = "README.md"
