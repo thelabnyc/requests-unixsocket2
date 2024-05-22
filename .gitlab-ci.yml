@@ -12,6 +12,7 @@ test:
   script:
     - pip install tox
     - tox
+  coverage: '/^TOTAL.+?(\d+\%)$/'
   parallel:
     matrix:
       - IMAGE: py310
