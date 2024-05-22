@@ -26,9 +26,7 @@ include = "requests_unixsocket"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-# Requests >=2.32.2 blocked by:
-# https://github.com/msabramo/requests-unixsocket/pull/72
-requests = ">=1.1,<2.32.2"
+requests = "^2.0.0"
 urllib3 = ">=1.0,<3.0"
 
 [tool.poetry.group.dev.dependencies]
