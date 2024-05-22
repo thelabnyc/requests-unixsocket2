@@ -1,7 +1,7 @@
 # requests-unixsocket
 
-<a href="https://badge.fury.io/py/requests-unixsocket">
-    <img src="https://badge.fury.io/py/requests-unixsocket.svg" alt="Latest Version on PyPI" />
+<a href="https://badge.fury.io/py/requests-unixsocket2">
+    <img src="https://badge.fury.io/py/requests-unixsocket2.svg" alt="Latest Version on PyPI" />
 </a>
 <a href="https://gitlab.com/thelabnyc/requests-unixsocket/-/commits/master">
     <img alt="pipeline status" src="https://gitlab.com/thelabnyc/requests-unixsocket/badges/master/pipeline.svg" />
@@ -13,7 +13,7 @@
     <img alt="Latest Release" src="https://gitlab.com/thelabnyc/requests-unixsocket/-/badges/release.svg" />
 </a>
 
-Use [requests](http://docs.python-requests.org/) to talk HTTP via a UNIX domain socket
+Use [requests](http://docs.python-requests.org/) to talk HTTP via a UNIX domain socket.
 
 ## Usage
 
@@ -61,7 +61,7 @@ with requests_unixsocket.monkeypatch():
 
 ### Abstract namespace sockets
 
-To connect to an [abstract namespace socket](https://utcc.utoronto.ca/~cks/space/blog/python/AbstractUnixSocketsAndPeercred>) (Linux only), prefix the name with a NULL byte (i.e.: `\0`) - e.g.:
+To connect to an [abstract namespace socket](https://utcc.utoronto.ca/~cks/space/blog/python/AbstractUnixSocketsAndPeercred) (Linux only), prefix the name with a NULL byte (i.e.: `\0`) - e.g.:
 
 ```py
 import requests_unixsocket
