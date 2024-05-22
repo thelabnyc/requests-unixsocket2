@@ -8,9 +8,8 @@ import logging
 import pytest
 import requests
 
-import requests_unixsocket
 from requests_unixsocket.testutils import UnixSocketServerThread
-
+import requests_unixsocket
 
 logger = logging.getLogger(__name__)
 

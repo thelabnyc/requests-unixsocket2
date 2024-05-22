@@ -1,7 +1,7 @@
 import socket
 
 from requests.adapters import HTTPAdapter
-from requests.compat import urlparse, unquote
+from requests.compat import unquote, urlparse
 
 try:
     import http.client as httplib

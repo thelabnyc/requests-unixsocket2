@@ -21,8 +21,8 @@ import os
 import threading
 import time
 import uuid
-import waitress
 
+import waitress
 
 logger = logging.getLogger(__name__)
 
