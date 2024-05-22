@@ -2,11 +2,7 @@ import socket
 
 from requests.adapters import HTTPAdapter
 from requests.compat import unquote, urlparse
-
-try:
-    from requests.packages import urllib3
-except ImportError:
-    import urllib3
+import urllib3
 
 
 # The following was adapted from some code from docker-py
