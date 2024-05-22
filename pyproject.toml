@@ -10,7 +10,7 @@ authors = ["thelab <thelabdev@thelab.co>"]
 readme = "README.md"
 homepage = "https://gitlab.com/thelabnyc/requests-unixsocket"
 repository = "https://gitlab.com/thelabnyc/requests-unixsocket"
-license = "Apache-2.0"
+license = "ISC"
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
