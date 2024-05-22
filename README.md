@@ -1,16 +1,16 @@
-# requests-unixsocket
+# requests-unixsocket2
 
 <a href="https://badge.fury.io/py/requests-unixsocket2">
     <img src="https://badge.fury.io/py/requests-unixsocket2.svg" alt="Latest Version on PyPI" />
 </a>
-<a href="https://gitlab.com/thelabnyc/requests-unixsocket/-/commits/master">
-    <img alt="pipeline status" src="https://gitlab.com/thelabnyc/requests-unixsocket/badges/master/pipeline.svg" />
+<a href="https://gitlab.com/thelabnyc/requests-unixsocket2/-/commits/master">
+    <img alt="pipeline status" src="https://gitlab.com/thelabnyc/requests-unixsocket2/badges/master/pipeline.svg" />
 </a>
-<a href="https://gitlab.com/thelabnyc/requests-unixsocket/-/commits/master">
-    <img alt="coverage report" src="https://gitlab.com/thelabnyc/requests-unixsocket/badges/master/coverage.svg" />
+<a href="https://gitlab.com/thelabnyc/requests-unixsocket2/-/commits/master">
+    <img alt="coverage report" src="https://gitlab.com/thelabnyc/requests-unixsocket2/badges/master/coverage.svg" />
 </a>
-<a href="https://gitlab.com/thelabnyc/requests-unixsocket/-/releases">
-    <img alt="Latest Release" src="https://gitlab.com/thelabnyc/requests-unixsocket/-/badges/release.svg" />
+<a href="https://gitlab.com/thelabnyc/requests-unixsocket2/-/releases">
+    <img alt="Latest Release" src="https://gitlab.com/thelabnyc/requests-unixsocket2/-/badges/release.svg" />
 </a>
 
 Use [requests](http://docs.python-requests.org/) to talk HTTP via a UNIX domain socket.
