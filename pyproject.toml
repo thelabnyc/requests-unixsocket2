@@ -27,7 +27,7 @@ include = "requests_unixsocket"
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.32.3"
-urllib3 = ">=1.0,<3.0"
+urllib3 = ">=2.2.2,<3.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = {extras = ["toml"], version = "^7.5.3"}
