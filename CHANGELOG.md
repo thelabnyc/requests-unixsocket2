@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.1
+
+- Restore Python 3.8 support
+
 ## 0.4.0
 
 Bug Fixes:
