@@ -1,25 +1,28 @@
-# Release Notes
+# Changes
 
-## 0.4.1
+## v0.4.1 (2024-06-28)
 
-- Restore Python 3.8 support
+### Fix
 
-## 0.4.0
+- **deps**: update dependency urllib3 to >=2.2.2,<3.0
+- **deps**: update dependency requests to ^2.32.3
+- **deps**: update dependency urllib3 to v2.2.2
+- **deps**: update dependency requests to v2.32.3
 
-Bug Fixes:
+## v0.4.0 (2024-05-22)
 
-- Fix compatibility with urllib3 >= 2.0 (See !1).
-- Fix compatibility with requests >= 2.32.2 (See !2).
+## 0.3.0 (2021-12-23)
 
-Misc:
+## 0.2.0 (2019-08-13)
 
-- Forked project from [msabramo/requests-unixsocket](https://github.com/msabramo/requests-unixsocket/) since it appears to be abandoned.
-- Re-licensed from Apache-2.0 to [ISC](https://opensource.org/license/isc-license-txt).
-- Migrated project config to Poetry.
+## 0.1.5 (2016-01-20)
 
-## 0.3.0 and Earlier
+## 0.1.4 (2015-02-04)
 
-See original project:
+## 0.1.3 (2015-02-03)
 
-- [msabramo/requests-unixsocket on GitHub](https://github.com/msabramo/requests-unixsocket/).
-- [requests-unixsocket on PyPI](https://pypi.org/project/requests-unixsocket/)
+## 0.1.2 (2014-11-28)
+
+## 0.1.1 (2014-11-27)
+
+## 0.1.0 (2014-11-27)
