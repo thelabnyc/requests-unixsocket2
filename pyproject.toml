@@ -25,12 +25,12 @@ classifiers = [
 include = "requests_unixsocket"
 
 [tool.poetry.dependencies]
-python = "^3.8.1"
+python = "^3.9"
 requests = "^2.32.3"
 urllib3 = ">=2.2.3,<3.0"
 
 [tool.poetry.group.dev.dependencies]
-coverage = {extras = ["toml"], version = "^7.6.1"}
+coverage = {extras = ["toml"], version = "^7.6.2"}
 flake8 = "^7.1.1"
 pytest = "^8.3.3"
 waitress = "^3.0.0"
