@@ -461,13 +461,13 @@ urllib3 = ">=2"
 
 [[package]]
 name = "types-waitress"
-version = "3.0.0.20241001"
+version = "3.0.1.20241030"
 description = "Typing stubs for waitress"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "types-waitress-3.0.0.20241001.tar.gz", hash = "sha256:f52bdef4c5318badcfcc3901a99c8b62d94548b2da3be3557c524414dca2b3e1"},
-    {file = "types_waitress-3.0.0.20241001-py3-none-any.whl", hash = "sha256:ba2e98335ce5b9ce42186338e7f882dfb870f284683894ed4227809a5c4887a9"},
+    {file = "types-waitress-3.0.1.20241030.tar.gz", hash = "sha256:58b67e05cba5492783964b5794432569946d92b484c23476caf7986b83285d57"},
+    {file = "types_waitress-3.0.1.20241030-py3-none-any.whl", hash = "sha256:4b93ff902b0d489c4fdaa509da6ce5944e897d728a40732ea967df253c59800d"},
 ]
 
 [[package]]
