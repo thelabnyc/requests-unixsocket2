@@ -461,13 +461,13 @@ urllib3 = ">=2"
 
 [[package]]
 name = "types-waitress"
-version = "3.0.1.20241030"
+version = "3.0.1.20241117"
 description = "Typing stubs for waitress"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "types-waitress-3.0.1.20241030.tar.gz", hash = "sha256:58b67e05cba5492783964b5794432569946d92b484c23476caf7986b83285d57"},
-    {file = "types_waitress-3.0.1.20241030-py3-none-any.whl", hash = "sha256:4b93ff902b0d489c4fdaa509da6ce5944e897d728a40732ea967df253c59800d"},
+    {file = "types-waitress-3.0.1.20241117.tar.gz", hash = "sha256:1df08f8de36cc30ddade179e1cb28c59776e89a1a2874893b59fe2ea00a823a0"},
+    {file = "types_waitress-3.0.1.20241117-py3-none-any.whl", hash = "sha256:4700d2f22bacab5f817692faf25f9b7d43810b72ab7434a628a5a4cd1f5766fd"},
 ]
 
 [[package]]
@@ -500,18 +500,18 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "waitress"
-version = "3.0.1"
+version = "3.0.2"
 description = "Waitress WSGI server"
 optional = false
 python-versions = ">=3.9.0"
 files = [
-    {file = "waitress-3.0.1-py3-none-any.whl", hash = "sha256:26cdbc593093a15119351690752c99adc13cbc6786d75f7b6341d1234a3730ac"},
-    {file = "waitress-3.0.1.tar.gz", hash = "sha256:ef0c1f020d9f12a515c4ec65c07920a702613afcad1dbfdc3bcec256b6c072b3"},
+    {file = "waitress-3.0.2-py3-none-any.whl", hash = "sha256:c56d67fd6e87c2ee598b76abdd4e96cfad1f24cacdea5078d382b1f9d7b5ed2e"},
+    {file = "waitress-3.0.2.tar.gz", hash = "sha256:682aaaf2af0c44ada4abfb70ded36393f0e307f4ab9456a215ce0020baefc31f"},
 ]
 
 [package.extras]
 docs = ["Sphinx (>=1.8.1)", "docutils", "pylons-sphinx-themes (>=1.0.9)"]
-testing = ["coverage (>=5.0)", "pytest", "pytest-cov"]
+testing = ["coverage (>=7.6.0)", "pytest", "pytest-cov"]
 
 [metadata]
 lock-version = "2.0"
