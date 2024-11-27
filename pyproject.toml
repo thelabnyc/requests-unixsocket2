@@ -30,7 +30,7 @@ requests = "^2.32.3"
 urllib3 = ">=2.2.3,<3.0"
 
 [tool.poetry.group.dev.dependencies]
-coverage = {extras = ["toml"], version = "^7.6.7"}
+coverage = {extras = ["toml"], version = "^7.6.8"}
 flake8 = "^7.1.1"
 pytest = "^8.3.3"
 waitress = "^3.0.2"
