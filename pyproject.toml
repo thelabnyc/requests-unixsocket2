@@ -34,7 +34,7 @@ coverage = {extras = ["toml"], version = "^7.6.9"}
 flake8 = "^7.1.1"
 pytest = "^8.3.4"
 waitress = "^3.0.2"
-mypy = "^1.13.0"
+mypy = "^1.14.0"
 types-requests = "^2.32.0.20240521"
 types-waitress = "^3.0.0.20240423"
 
