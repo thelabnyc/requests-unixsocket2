@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 class KillThread(threading.Thread):
     def __init__(self, server, *args, **kwargs):
-        super(KillThread, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.server = server
 
     def run(self):
@@ -67,7 +67,7 @@ class WSGIApp:
 
 class UnixSocketServerThread(threading.Thread):
     def __init__(self, *args, **kwargs):
-        super(UnixSocketServerThread, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.usock = self.get_tempfile_name()
         self.server = None
         self.server_ready_event = threading.Event()

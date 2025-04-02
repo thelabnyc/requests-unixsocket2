@@ -9,11 +9,11 @@ DEFAULT_SCHEME = "http+unix://"
 
 class Session(requests.Session):
     def __init__(self, url_scheme=DEFAULT_SCHEME, *args, **kwargs):
-        super(Session, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.mount(url_scheme, UnixAdapter())
 
 
-class monkeypatch(object):
+class monkeypatch:
     def __init__(self, url_scheme=DEFAULT_SCHEME):
         self.session = Session()
         requests = self._get_global_requests_module()
@@ -30,7 +30,7 @@ class monkeypatch(object):
             "options",
         )
         # Store the original methods
-        self.orig_methods = dict((m, requests.__dict__[m]) for m in self.methods)
+        self.orig_methods = {m: requests.__dict__[m] for m in self.methods}
         # Monkey patch
         g = globals()
         for m in self.methods:
