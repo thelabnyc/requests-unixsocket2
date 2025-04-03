@@ -1,5 +1,21 @@
 # Changes
 
+## v1.0.0 (2025-04-03)
+
+### Feat
+
+- support Python 3.13. Drop Python 3.10
+
+### Fix
+
+- **deps**: update dependency urllib3 to >=2.3.0,<3.0
+- **deps**: Drop Python 3.8 support
+- **deps**: update dependency urllib3 to >=2.2.3,<3.0
+
+### Refactor
+
+- add pyupgrade / django-upgrade precommit hooks
+
 ## v0.4.2 (2024-08-31)
 
 ## v0.4.2b0 (2024-08-08)
