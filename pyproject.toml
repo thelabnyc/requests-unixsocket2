@@ -1,16 +1,12 @@
 [build-system]
-requires = [ "poetry-core>=2.1.2",]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "requests-unixsocket2"
 version = "1.0.0"
 description = "Use requests to talk HTTP via a UNIX domain socket"
-authors = ["thelab <thelabdev@thelab.co>"]
 readme = "README.md"
-homepage = "https://gitlab.com/thelabnyc/requests-unixsocket2"
-repository = "https://gitlab.com/thelabnyc/requests-unixsocket2"
-license = "ISC"
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
@@ -19,30 +15,42 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
+dependencies = ["requests (>=2.32.3,<3)", "urllib3 (>=2.4.0,<3.0)"]
+requires-python = ">=3.9"
 
+[project.license]
+text = "ISC"
 
-[[tool.poetry.packages]]
-include = "requests_unixsocket"
+[[project.authors]]
+name = "thelab"
+email = "thelabdev@thelab.co"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-requests = "^2.32.3"
-urllib3 = ">=2.4.0,<3.0"
+[project.urls]
+Homepage = "https://gitlab.com/thelabnyc/requests-unixsocket2"
+Repository = "https://gitlab.com/thelabnyc/requests-unixsocket2"
 
-[tool.poetry.group.dev.dependencies]
-coverage = {extras = ["toml"], version = "^7.8.0"}
-flake8 = "^7.2.0"
-pytest = "^8.3.5"
-waitress = "^3.0.2"
-mypy = "^1.15.0"
-types-requests = "^2.32.0.20240521"
-types-waitress = "^3.0.0.20240423"
+[dependency-groups]
+dev = [
+    "coverage[toml] (>=7.8.0,<8)",
+    "flake8 (>=7.2.0,<8)",
+    "pytest (>=8.3.5,<9)",
+    "waitress (>=3.0.2,<4)",
+    "mypy (>=1.15.0,<2)",
+    "types-requests (>=2.32.0.20240521,<3)",
+    "types-waitress (>=3.0.0.20240423,<4)",
+    "tox>=4.27.0",
+    "tox-uv>=1.26.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["requests_unixsocket"]
 
 [tool.mypy]
 python_version = "3.8"
 
 [tool.pytest.ini_options]
 addopts = "--tb=short"
+
 
 [tool.isort]
 profile = "black"
@@ -56,6 +64,7 @@ source_pkgs = ["requests_unixsocket"]
 show_missing = true
 ignore_errors = true
 
+
 [tool.commitizen]
 name = "cz_conventional_commits"
 annotated_tag = true
@@ -63,7 +72,7 @@ gpg_sign = true
 tag_format = "v$version"
 update_changelog_on_bump = true
 changelog_merge_prerelease = true
-version_provider = "poetry"
+version_provider = "pep621"
 version_scheme = "pep440"
 version_files = [
     "pyproject.toml:version",
