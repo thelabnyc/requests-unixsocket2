@@ -32,7 +32,7 @@ Repository = "https://gitlab.com/thelabnyc/requests-unixsocket2"
 [dependency-groups]
 dev = [
     "coverage[toml] (>=7.8.0,<8)",
-    "flake8 (>=7.2.0,<8)",
+    "ruff (>=0.11.6)",
     "pytest (>=8.3.5,<9)",
     "waitress (>=3.0.2,<4)",
     "mypy (>=1.15.0,<2)",
@@ -56,6 +56,9 @@ addopts = "--tb=short"
 profile = "black"
 from_first = true
 
+[tool.ruff.lint.isort]
+from-first = true
+
 [tool.coverage.run]
 branch = true
 source_pkgs = ["requests_unixsocket"]
@@ -74,12 +77,6 @@ update_changelog_on_bump = true
 changelog_merge_prerelease = true
 version_provider = "pep621"
 version_scheme = "pep440"
-version_files = [
-    "pyproject.toml:version",
-]
-pre_bump_hooks = [
-    "pre-commit run --all-files || true",
-]
-post_bump_hooks = [
-    "git push origin master $CZ_POST_CURRENT_TAG_VERSION"
-]
+version_files = ["pyproject.toml:version"]
+pre_bump_hooks = ["pre-commit run --all-files || true"]
+post_bump_hooks = ["git push origin master $CZ_POST_CURRENT_TAG_VERSION"]

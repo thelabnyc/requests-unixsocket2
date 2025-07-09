@@ -58,9 +58,7 @@ def test_unix_domain_adapter_url_with_query_params():
     with UnixSocketServerThread() as usock_thread:
         session = requests_unixsocket.Session("http+unix://")
         urlencoded_usock = requests.compat.quote_plus(usock_thread.usock)
-        url = (
-            "http+unix://%s" "/containers/nginx/logs?timestamp=true" % urlencoded_usock
-        )
+        url = "http+unix://%s/containers/nginx/logs?timestamp=true" % urlencoded_usock
 
         for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
             logger.debug("Calling session.%s(%r) ...", method, url)
