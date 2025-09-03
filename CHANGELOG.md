@@ -1,5 +1,16 @@
 # Changes
 
+## v1.0.1 (2025-09-03)
+
+### Fix
+
+- **deps**: update dependency urllib3 to >=2.4.0,<3.0
+
+### Refactor
+
+- migrate black/flake8 -> ruff
+- migrate from poetry -> uv
+
 ## v1.0.0 (2025-04-03)
 
 ### Feat

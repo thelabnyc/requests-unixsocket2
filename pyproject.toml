@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "requests-unixsocket2"
-version = "1.0.0"
+version = "1.0.1"
 description = "Use requests to talk HTTP via a UNIX domain socket"
 readme = "README.md"
 classifiers = [
