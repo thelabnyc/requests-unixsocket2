@@ -449,7 +449,7 @@ dev = [
     { name = "tox", specifier = ">=4.29.0" },
     { name = "tox-uv", specifier = ">=1.28.0" },
     { name = "types-requests", specifier = ">=2.32.4.20250809,<3" },
-    { name = "types-waitress", specifier = ">=3.0.0.20240423,<4" },
+    { name = "types-waitress", specifier = ">=3.0.1.20250801,<4" },
     { name = "waitress", specifier = ">=3.0.2,<4" },
 ]
 
