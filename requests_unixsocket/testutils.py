@@ -53,6 +53,19 @@ class WSGIApp:
         ]
         body_bytes = b"Hello world!"
         start_response(status_text, response_headers)
+
+        # Per HTTP spec, HEAD responses must not include a body
+        if environ["REQUEST_METHOD"] == "HEAD":
+            logger.debug(
+                "WSGIApp.__call__: HEAD request - responding with "
+                "status_text = %r; "
+                "response_headers = %r; "
+                "body_bytes = (empty)",
+                status_text,
+                response_headers,
+            )
+            return []
+
         logger.debug(
             "WSGIApp.__call__: Responding with "
             "status_text = %r; "
