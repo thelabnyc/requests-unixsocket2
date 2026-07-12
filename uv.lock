@@ -563,7 +563,7 @@ dev = [
     { name = "mypy", specifier = ">=1.20.2,<2" },
     { name = "pytest", specifier = ">=9.1.1,<10" },
     { name = "ruff", specifier = ">=0.15.20" },
-    { name = "tox", specifier = ">=4.56.2" },
+    { name = "tox", specifier = ">=4.56.4" },
     { name = "tox-uv", specifier = ">=1.35.2" },
     { name = "types-requests", specifier = ">=2.33.0.20260518,<3" },
     { name = "types-waitress", specifier = ">=3.0.1.20260508,<4" },
