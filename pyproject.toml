@@ -32,7 +32,7 @@ Repository = "https://gitlab.com/thelabnyc/requests-unixsocket2"
 [dependency-groups]
 dev = [
     "coverage[toml] (>=7.15.2,<8)",
-    "ruff (>=0.15.21)",
+    "ruff (>=0.15.22)",
     "pytest (>=9.1.1,<10)",
     "waitress (>=3.0.2,<4)",
     "mypy (>=1.20.2,<2)",
