@@ -17,7 +17,7 @@ def handle_response():
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.bind("\0test_socket")
     sock.listen(1)
-    client_sock, addr = sock.accept()
+    client_sock, _addr = sock.accept()
     client_sock.recv(1024)
     client_sock.sendall(b"HTTP/1.0 200 OK\r\n")
     client_sock.sendall(b"Content-Type: text/plain\r\n\r\n")

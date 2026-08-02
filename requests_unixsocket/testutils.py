@@ -90,7 +90,7 @@ class UnixSocketServerThread(threading.Thread):
         # the hostname to 63 characters and we'll get a "InvalidURL:
         # URL has an invalid label" error if we exceed that.
         args = (os.stat(__file__).st_ino, os.getpid(), uuid.uuid4().hex[-8:])
-        return "/tmp/test_requests.%s_%s_%s" % args
+        return "/tmp/test_requests.{}_{}_{}".format(*args)
 
     def run(self):
         logger.debug("Call waitress.serve in %r ...", self)
@@ -106,7 +106,7 @@ class UnixSocketServerThread(threading.Thread):
         server.run()
 
     def __enter__(self):
-        logger.debug("Starting %r ..." % self)
+        logger.debug("Starting %r ...", self)
         self.start()
         logger.debug("Started %r.", self)
         self.server_ready_event.wait()
