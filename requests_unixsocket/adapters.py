@@ -60,7 +60,7 @@ class UnixAdapter(HTTPAdapter):
 
         if proxy:
             raise ValueError(
-                "%s does not support specifying proxies" % self.__class__.__name__
+                f"{self.__class__.__name__} does not support specifying proxies"
             )
 
         with self.pools.lock:

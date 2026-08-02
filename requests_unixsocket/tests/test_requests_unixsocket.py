@@ -30,7 +30,7 @@ def test_unix_domain_adapter_ok():
     with UnixSocketServerThread() as usock_thread:
         session = requests_unixsocket.Session("http+unix://")
         urlencoded_usock = requests.compat.quote_plus(usock_thread.usock)
-        url = "http+unix://%s/path/to/page" % urlencoded_usock
+        url = f"http+unix://{urlencoded_usock}/path/to/page"
 
         for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
             logger.debug("Calling session.%s(%r) ...", method, url)
@@ -58,7 +58,7 @@ def test_unix_domain_adapter_url_with_query_params():
     with UnixSocketServerThread() as usock_thread:
         session = requests_unixsocket.Session("http+unix://")
         urlencoded_usock = requests.compat.quote_plus(usock_thread.usock)
-        url = "http+unix://%s/containers/nginx/logs?timestamp=true" % urlencoded_usock
+        url = f"http+unix://{urlencoded_usock}/containers/nginx/logs?timestamp=true"
 
         for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
             logger.debug("Calling session.%s(%r) ...", method, url)
@@ -104,31 +104,33 @@ def test_unix_domain_adapter_connection_proxies_error():
 
 
 def test_unix_domain_adapter_monkeypatch():
-    with UnixSocketServerThread() as usock_thread:
-        with requests_unixsocket.monkeypatch("http+unix://"):
-            urlencoded_usock = requests.compat.quote_plus(usock_thread.usock)
-            url = "http+unix://%s/path/to/page" % urlencoded_usock
+    with (
+        UnixSocketServerThread() as usock_thread,
+        requests_unixsocket.monkeypatch("http+unix://"),
+    ):
+        urlencoded_usock = requests.compat.quote_plus(usock_thread.usock)
+        url = f"http+unix://{urlencoded_usock}/path/to/page"
 
-            for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
-                logger.debug("Calling session.%s(%r) ...", method, url)
-                r = getattr(requests, method)(url)
-                logger.debug(
-                    "Received response: %r with text: %r and headers: %r",
-                    r,
-                    r.text,
-                    r.headers,
-                )
-                assert r.status_code == 200
-                assert r.headers["server"] == "waitress"
-                assert r.headers["X-Transport"] == "unix domain socket"
-                assert r.headers["X-Requested-Path"] == "/path/to/page"
-                assert r.headers["X-Socket-Path"] == usock_thread.usock
-                assert isinstance(r.connection, requests_unixsocket.UnixAdapter)
-                assert r.url.lower() == url.lower()
-                if method == "head":
-                    assert r.text == ""
-                else:
-                    assert r.text == "Hello world!"
+        for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
+            logger.debug("Calling session.%s(%r) ...", method, url)
+            r = getattr(requests, method)(url)
+            logger.debug(
+                "Received response: %r with text: %r and headers: %r",
+                r,
+                r.text,
+                r.headers,
+            )
+            assert r.status_code == 200
+            assert r.headers["server"] == "waitress"
+            assert r.headers["X-Transport"] == "unix domain socket"
+            assert r.headers["X-Requested-Path"] == "/path/to/page"
+            assert r.headers["X-Socket-Path"] == usock_thread.usock
+            assert isinstance(r.connection, requests_unixsocket.UnixAdapter)
+            assert r.url.lower() == url.lower()
+            if method == "head":
+                assert r.text == ""
+            else:
+                assert r.text == "Hello world!"
 
     for method in ["get", "post", "head", "patch", "put", "delete", "options"]:
         with pytest.raises(requests.exceptions.InvalidSchema):
