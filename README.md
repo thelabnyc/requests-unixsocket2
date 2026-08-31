@@ -28,8 +28,8 @@ import requests_unixsocket
 
 session = requests_unixsocket.Session()
 
-r = session.get('http+unix://%2Fvar%2Frun%2Fdocker.sock/info')
-registry_config = r.json()['RegistryConfig']
+r = session.get("http+unix://%2Fvar%2Frun%2Fdocker.sock/info")
+registry_config = r.json()["RegistryConfig"]
 print(json.dumps(registry_config, indent=4))
 ```
 
@@ -45,7 +45,7 @@ import requests_unixsocket
 
 requests_unixsocket.monkeypatch()
 
-r = requests.get('http+unix://%2Fvar%2Frun%2Fdocker.sock/info')
+r = requests.get("http+unix://%2Fvar%2Frun%2Fdocker.sock/info")
 assert r.status_code == 200
 ```
 
@@ -55,7 +55,7 @@ or you can do it temporarily using a context manager:
 import requests_unixsocket
 
 with requests_unixsocket.monkeypatch():
-    r = requests.get('http+unix://%2Fvar%2Frun%2Fdocker.sock/info')
+    r = requests.get("http+unix://%2Fvar%2Frun%2Fdocker.sock/info")
     assert r.status_code == 200
 ```
 
@@ -67,7 +67,7 @@ To connect to an [abstract namespace socket](https://utcc.utoronto.ca/~cks/space
 import requests_unixsocket
 
 session = requests_unixsocket.Session()
-res = session.get('http+unix://\0test_socket/get')
+res = session.get("http+unix://\0test_socket/get")
 print(res.text)
 ```
 
