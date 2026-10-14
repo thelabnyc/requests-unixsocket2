@@ -25,6 +25,8 @@ include:
 test:
   stage: test
   image: "registry.gitlab.com/thelabnyc/python:${IMAGE}"
+  variables:
+    UV_PYTHON: "${IMAGE}"
   script:
     - uv sync
     - uv run tox
