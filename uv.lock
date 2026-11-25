@@ -680,7 +680,7 @@ dev = [
     { name = "tox", marker = "python_full_version >= '3.11'", specifier = ">=4.65.1" },
     { name = "tox-uv", marker = "python_full_version >= '3.11'", specifier = ">=1.37.0" },
     { name = "types-requests", specifier = ">=2.33.0.20261030,<3" },
-    { name = "types-waitress", specifier = ">=3.0.1.20260724,<4" },
+    { name = "types-waitress", specifier = ">=3.0.1.20261122,<4" },
     { name = "waitress", specifier = ">=3.0.2,<4" },
 ]
 
